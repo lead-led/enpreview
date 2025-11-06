@@ -1,6 +1,6 @@
-# EM Tally
+# Enpreview
 
-EM Tally is a desktop companion for Barco Event Master operators. It talks to the frame over the JSON-RPC API on port `9999`, feeding tally and destination state into a configurable Electron + Svelte interface so you always know what is live, on preview, or listening.
+Enpreview is a desktop companion for Barco Event Master operators. It talks to the frame over the JSON-RPC API on port `9999`, feeding tally and destination state into a configurable Electron + Svelte interface so you always know what is live, on preview, or listening.
 
 ---
 
@@ -53,4 +53,4 @@ Artifacts are written to `dist/` and `build/` depending on the target platform. 
 
 ## License
 
-EM Tally is distributed under the PolyForm Noncommercial License 1.0.0. See `LICENSE` for full terms.
+Enpreview is distributed under the PolyForm Noncommercial License 1.0.0. See `LICENSE` for full terms.
