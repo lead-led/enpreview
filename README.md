@@ -1,53 +1,50 @@
-This project uses the following libraries:
+# EM Tally
 
-## JULY 26, 2023
+EM Tally is a desktop companion for Barco Event Master operators. It polls the processor over OSC and HTTP, then surfaces tally and destination state in a configurable Electron + Svelte interface so you always know what is live, on preview, or listening.
 
-You were working on the presetHasDestinationsThatAreBeingListenedTo function,
-you are polling for the destinationsForPreset API, you don't know when to trigger it.
+---
 
-https://carbon-components-svelte.onrender.com/
+**Project links**
 
-### Request ID Codes
+- `docs/` contains API experiments and response captures under `response_objects/` for reference.
+- Releases are built with Electron Builder scripts in `package.json`.
 
-0 - presetList
-1 - screen destination list
-2 - aux destination list
-3 -
-4 - screen dest subcription
-5 - aux dest subscription
-6 - unSubscription
-7 - list content, screens
-8 - list content, aux
-9 -
-10 - power status
+**Issue tracking**
 
-The request that shows current state of the hardware is, parsing this says when to switch PGM state:
+- File bugs or feature ideas through your team's normal workflow (this repository ships without Git metadata by default).
 
--   listContent
--   listAuxContent
+---
 
-These API calls are requested when an incoming subscription message
-is "ScreenDestChanged" or "AuxDestChanged"
+## Key features
 
-The main functionality of the program saves the old state and compares the new state. This is done via the reponse of these two API
-calls.
+- Real-time polling of Event Master destinations and layer content.
+- Visual tally indicators for program, preview, and listened destinations.
+- Electron shell with draggable windows for overlay-style monitoring.
+- Carbon Components Svelte UI with themeable widgets.
 
-This was the original parsed state object:
+## Getting started
 
-const newLayerState = {
-id: layer.id,
-preview: layer.PvwMode,
-program: layer.PgmMode,
-};
-
-////////////////////////////////////////
-
+```bash
+npm install
+npm run dev        # launches Vite/Svelte and Electron together
 ```
 
+The dev script starts two processes via `concurrently`: the Svelte frontend (`npm run dev:svelte`) and the Electron host (`npm run dev:electron`). When developing UI-only changes you can run `npm run dev:svelte` on its own.
+
+## Building
+
+```bash
+npm run build          # builds Svelte + Electron bundles
+npm run dist           # packages desktop binaries with electron-builder
 ```
 
-## TODO
+Artifacts are written to `dist/` and `build/` depending on the target platform. See `electron-builder.json` for platform-specific configuration.
 
-When destinations refresh, need to parse which ones are being listened to
+## Troubleshooting
 
-When a window is created, need to ask the backend for server information
+- Response samples in `response_objects/` illustrate the expected payloads from Event Master APIs.
+- If tally data stops updating, confirm the OSC subscriptions (`ScreenDestChanged`, `AuxDestChanged`) are flowing—these trigger refresh calls for `listContent` and `listAuxContent`.
+
+## License
+
+EM Tally is distributed under the PolyForm Noncommercial License 1.0.0. See `LICENSE` for full terms.
