@@ -1,0 +1,23 @@
+{
+	"extends": "./.svelte-kit/tsconfig.json",
+	"compilerOptions": {
+		"module": "esnext",
+		"target": "es2020",
+		"moduleResolution": "node",
+		"strict": true,
+		"types": ["vite/client", "node"],
+		"typeRoots": ["node_modules/@types"],
+		"lib": ["ESNext"],
+		"verbatimModuleSyntax": true,
+		"ignoreDeprecations": "5.0",
+		"isolatedModules": true,
+		"sourceMap": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"allowJs": true,
+		"checkJs": false
+	},
+	"include": ["src/**/*.d.ts", "src/**/*.ts", "src/**/*.svelte", "src/electron.js"],
+	"exclude": ["version/**/*", "src/electron.cjs", "src/main/**/*"]
+}

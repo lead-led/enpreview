@@ -1,0 +1,178 @@
+{
+    "id": 1,
+    "Name": "PGM1B",
+    "IsActive": 0,
+    "BGLyr": [
+        {
+            "id": 0,
+            "LastBGSourceIndex": -1,
+            "BGShowMatte": 1,
+            "BGColor": {
+                "id": 0,
+                "Red": 0,
+                "Green": 0,
+                "Blue": 0
+            }
+        },
+        {
+            "id": 1,
+            "LastBGSourceIndex": -1,
+            "BGShowMatte": 1,
+            "BGColor": {
+                "id": 0,
+                "Red": 0,
+                "Green": 0,
+                "Blue": 0
+            }
+        }
+    ],
+    "Layers": [
+        {
+            "id": 0,
+            "Name": "LayerA",
+            "LastSrcIdx": 11,
+            "PvwMode": 0,
+            "PgmMode": 1,
+            "LinkLayerId": -1,
+            "LinkDestId": -1,
+            "Capacity": 2,
+            "PvwZOrder": 0,
+            "PgmZOrder": 0,
+            "Freeze": 0,
+            "ScalingMode": 0,
+            "Window": [
+                {
+                    "HPos": 0,
+                    "VPos": 0,
+                    "HSize": 1920,
+                    "VSize": 1080
+                },
+                {
+                    "HPos": 0,
+                    "VPos": 0,
+                    "HSize": 1920,
+                    "VSize": 1080
+                }
+            ],
+            "Source": [
+                {
+                    "HPos": 0,
+                    "VPos": 0,
+                    "HSize": 1920,
+                    "VSize": 1080
+                },
+                {
+                    "HPos": 0,
+                    "VPos": 0,
+                    "HSize": 1920,
+                    "VSize": 1080
+                }
+            ],
+            "Mask": [
+                {
+                    "id": 0,
+                    "Top": 0,
+                    "Left": 0,
+                    "Right": 0,
+                    "Bottom": 0
+                },
+                {
+                    "id": 0,
+                    "Top": 0,
+                    "Left": 0,
+                    "Right": 0,
+                    "Bottom": 0
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "Name": "LayerB",
+            "LastSrcIdx": 11,
+            "PvwMode": 1,
+            "PgmMode": 0,
+            "LinkLayerId": -1,
+            "LinkDestId": -1,
+            "Capacity": 2,
+            "PvwZOrder": 0,
+            "PgmZOrder": 0,
+            "Freeze": 0,
+            "ScalingMode": 0,
+            "Window": [
+                {
+                    "HPos": 0,
+                    "VPos": 0,
+                    "HSize": 1920,
+                    "VSize": 1080
+                },
+                {
+                    "HPos": 0,
+                    "VPos": 0,
+                    "HSize": 1920,
+                    "VSize": 1080
+                }
+            ],
+            "Source": [
+                {
+                    "HPos": 0,
+                    "VPos": 0,
+                    "HSize": 1920,
+                    "VSize": 1080
+                },
+                {
+                    "HPos": 0,
+                    "VPos": 0,
+                    "HSize": 1920,
+                    "VSize": 1080
+                }
+            ],
+            "Mask": [
+                {
+                    "id": 0,
+                    "Top": 0,
+                    "Left": 0,
+                    "Right": 0,
+                    "Bottom": 0
+                },
+                {
+                    "id": 0,
+                    "Top": 0,
+                    "Left": 0,
+                    "Right": 0,
+                    "Bottom": 0
+                }
+            ]
+        }
+    ],
+    "Transition": [
+        {
+            "id": 0,
+            "TransTime": 1,
+            "TransPos": 0,
+            "ArmMode": 0
+        },
+        {
+            "id": 1,
+            "TransTime": 1,
+            "TransPos": 0,
+            "ArmMode": 0
+        }
+    ],
+    "OutputCfg": [
+        {
+            "id": 1,
+            "Name": "HDMI1B",
+            "OutputAOI": [
+                {
+                    "id": 0,
+                    "TestPattern": [
+                        {
+                            "id": 0,
+                            "TestPatternMode": 0
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

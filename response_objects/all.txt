@@ -1,0 +1,472 @@
+
+{"params": {"id": 0}, "method":"listAuxContent", "id":"1234", "jsonrpc":"2.0"}
+
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "success": 0,
+    "response": {
+      "id": 0,
+      "Name": "GFX SCAN",
+      "PvwLastSrcIndex": 11,
+      "PgmLastSrcIndex": 11,
+      "OutputCfg": [
+        {
+        "id": 3,
+        "Name": "SDIOutput4",
+        "OutputAOI": [
+        {
+        "id": 0,
+        "TestPattern": [
+        {
+        "id": 0,
+        "TestPatternMode": 0
+        }
+        ]
+        }
+        ]
+        }
+      ]
+    }
+  },
+  "id": "1234"
+}
+
+////////////////////////////////////////
+
+```
+
+{"params": {"id": 0}, "method":"listContent", "id":"1234", "jsonrpc":"2.0"}
+
+{
+"jsonrpc": "2.0",
+"result": {
+"success": 0,
+"response": {
+"id": 0,
+"Name": "HL LED",
+"IsActive": 1,
+"BGLyr": [
+{
+"id": 0,
+"LastBGSourceIndex": 6,
+"BGShowMatte": 1,
+"BGColor": {
+"id": 0,
+"Red": 0,
+"Green": 0,
+"Blue": 0
+}
+},
+{
+"id": 1,
+"LastBGSourceIndex": 15,
+"BGShowMatte": 0,
+"BGColor": {
+"id": 0,
+"Red": 0,
+"Green": 0,
+"Blue": 0
+}
+}
+],
+"Layers": [
+{
+"id": 0,
+"Name": "Layer1-B",
+"LastSrcIdx": 5,
+"PvwMode": 1,
+"PgmMode": 0,
+"LinkLayerId": -1,
+"LinkDestId": -1,
+"Capacity": 4,
+"PvwZOrder": 0,
+"PgmZOrder": 0,
+"Freeze": 0,
+"ScalingMode": 2,
+"Window": [
+{
+"HPos": 0,
+"VPos": 0,
+"HSize": 5120,
+"VSize": 1280
+},
+{
+"HPos": -3900,
+"VPos": 0,
+"HSize": 9720,
+"VSize": 1080
+}
+],
+"Source": [
+{
+"HPos": 0,
+"VPos": 0,
+"HSize": 5120,
+"VSize": 1280
+},
+{
+"HPos": 0,
+"VPos": 0,
+"HSize": 5120,
+"VSize": 1280
+}
+],
+"Mask": [
+{
+"id": 0,
+"Top": 0,
+"Left": 0,
+"Right": 0,
+"Bottom": 0
+},
+{
+"id": 0,
+"Top": 0,
+"Left": 0,
+"Right": 0,
+"Bottom": 0
+}
+]
+},
+{
+"id": 1,
+"Name": "Layer1-B",
+"LastSrcIdx": 11,
+"PvwMode": 0,
+"PgmMode": 1,
+"LinkLayerId": -1,
+"LinkDestId": -1,
+"Capacity": 4,
+"PvwZOrder": 0,
+"PgmZOrder": 0,
+"Freeze": 0,
+"ScalingMode": 2,
+"Window": [
+{
+"HPos": 0,
+"VPos": 0,
+"HSize": 3840,
+"VSize": 1280
+},
+{
+"HPos": -1774,
+"VPos": 0,
+"HSize": 5468,
+"VSize": 1080
+}
+],
+"Source": [
+{
+"HPos": 0,
+"VPos": 0,
+"HSize": 3840,
+"VSize": 1280
+},
+{
+"HPos": 0,
+"VPos": 0,
+"HSize": 3840,
+"VSize": 1280
+}
+],
+"Mask": [
+{
+"id": 0,
+"Top": 0,
+"Left": 0,
+"Right": 0,
+"Bottom": 0
+},
+{
+"id": 0,
+"Top": 0,
+"Left": 0,
+"Right": 0,
+"Bottom": 0
+}
+]
+},
+{
+"id": 2,
+"Name": "Layer2-A",
+"LastSrcIdx": 15,
+"PvwMode": 0,
+"PgmMode": 0,
+"LinkLayerId": -1,
+"LinkDestId": -1,
+"Capacity": 1,
+"PvwZOrder": 2,
+"PgmZOrder": 2,
+"Freeze": 0,
+"ScalingMode": 2,
+"Window": [
+{
+"HPos": 3840,
+"VPos": 0,
+"HSize": 1280,
+"VSize": 1280
+},
+{
+"HPos": 420,
+"VPos": 0,
+"HSize": 1080,
+"VSize": 1080
+}
+],
+"Source": [
+{
+"HPos": 420,
+"VPos": 0,
+"HSize": 1080,
+"VSize": 1080
+},
+{
+"HPos": 0,
+"VPos": 0,
+"HSize": 1080,
+"VSize": 1080
+}
+],
+"Mask": [
+{
+"id": 0,
+"Top": 0,
+"Left": 21.88,
+"Right": 21.88,
+"Bottom": 0
+},
+{
+"id": 0,
+"Top": 0,
+"Left": 0,
+"Right": 0,
+"Bottom": 0
+}
+]
+},
+{
+"id": 3,
+"Name": "Layer2-A",
+"LastSrcIdx": 15,
+"PvwMode": 0,
+"PgmMode": 1,
+"LinkLayerId": -1,
+"LinkDestId": -1,
+"Capacity": 1,
+"PvwZOrder": 2,
+"PgmZOrder": 2,
+"Freeze": 0,
+"ScalingMode": 2,
+"Window": [
+{
+"HPos": 3840,
+"VPos": 0,
+"HSize": 1280,
+"VSize": 1280
+},
+{
+"HPos": 420,
+"VPos": 0,
+"HSize": 1080,
+"VSize": 1080
+}
+],
+"Source": [
+{
+"HPos": 420,
+"VPos": 0,
+"HSize": 1080,
+"VSize": 1080
+},
+{
+"HPos": 0,
+"VPos": 0,
+"HSize": 1080,
+"VSize": 1080
+}
+],
+"Mask": [
+{
+"id": 0,
+"Top": 0,
+"Left": 21.88,
+"Right": 21.88,
+"Bottom": 0
+},
+{
+"id": 0,
+"Top": 0,
+"Left": 0,
+"Right": 0,
+"Bottom": 0
+}
+]
+},
+{
+"id": 4,
+"Name": "Layer3",
+"LastSrcIdx": 52,
+"PvwMode": 0,
+"PgmMode": 0,
+"LinkLayerId": -1,
+"LinkDestId": -1,
+"Capacity": 1,
+"PvwZOrder": 4,
+"PgmZOrder": 4,
+"Freeze": 0,
+"ScalingMode": 2,
+"Window": [
+{
+"HPos": 212,
+"VPos": 200,
+"HSize": 150,
+"VSize": 150
+},
+{
+"HPos": 420,
+"VPos": 0,
+"HSize": 1080,
+"VSize": 1080
+}
+],
+"Source": [
+{
+"HPos": 0,
+"VPos": 0,
+"HSize": 864,
+"VSize": 864
+},
+{
+"HPos": 0,
+"VPos": 0,
+"HSize": 864,
+"VSize": 864
+}
+],
+"Mask": [
+{
+"id": 0,
+"Top": 0,
+"Left": 0,
+"Right": 0,
+"Bottom": 0
+},
+{
+"id": 0,
+"Top": 0,
+"Left": 0,
+"Right": 0,
+"Bottom": 0
+}
+]
+},
+{
+"id": 6,
+"Name": "Layer4",
+"LastSrcIdx": 50,
+"PvwMode": 0,
+"PgmMode": 0,
+"LinkLayerId": -1,
+"LinkDestId": -1,
+"Capacity": 1,
+"PvwZOrder": 6,
+"PgmZOrder": 6,
+"Freeze": 0,
+"ScalingMode": 2,
+"Window": [
+{
+"HPos": 2742,
+"VPos": 200,
+"HSize": 150,
+"VSize": 150
+},
+{
+"HPos": 420,
+"VPos": 0,
+"HSize": 1080,
+"VSize": 1080
+}
+],
+"Source": [
+{
+"HPos": 0,
+"VPos": 0,
+"HSize": 864,
+"VSize": 864
+},
+{
+"HPos": 0,
+"VPos": 0,
+"HSize": 864,
+"VSize": 864
+}
+],
+"Mask": [
+{
+"id": 0,
+"Top": 0,
+"Left": 0,
+"Right": 0,
+"Bottom": 0
+},
+{
+"id": 0,
+"Top": 0,
+"Left": 0,
+"Right": 0,
+"Bottom": 0
+}
+]
+}
+],
+"Transition": [
+{
+"id": 0,
+"TransTime": 30,
+"TransPos": 0,
+"ArmMode": 1
+},
+{
+"id": 1,
+"TransTime": 30,
+"TransPos": 0,
+"ArmMode": 0
+}
+],
+"OutputCfg": [
+{
+"id": 0,
+"Name": "HDMIOutput1",
+"OutputAOI": [
+{
+"id": 0,
+"TestPattern": [
+{
+"id": 0,
+"TestPatternMode": 0
+}
+]
+}
+]
+},
+{
+"id": 8,
+"Name": "HDMIOutput9",
+"OutputAOI": [
+{
+"id": 0,
+"TestPattern": [
+{
+"id": 0,
+"TestPatternMode": 0
+}
+]
+}
+]
+}
+]
+}
+},
+"id": "1234"
+}

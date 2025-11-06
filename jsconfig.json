@@ -1,0 +1,23 @@
+{
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"$lib": ["src/lib"],
+			"$lib/*": ["src/lib/*"],
+			"/~/*": ["src/*"]
+		}
+	},
+	"exclude": ["node_modules", "build", "dist",]
+}
+
+
+// {
+//   "compilerOptions": {
+//     "target": "ES2020",
+//     "module": "CommonJS"
+//   },
+//   "exclude": [
+//     "node_modules",
+//     // "path/to/your/typescript/files"
+//   ]
+// }

@@ -1,0 +1,78 @@
+{
+	"name": "enpreview",
+	"version": "1.0.3",
+	"description": "Show state of barco event master and some other things.",
+	"main": "src/electron.cjs",
+	"type": "module",
+	"author": "Devon Lamond",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/lead-led/enpreview"
+	},
+	"scripts": {
+		"dev": "cross-env NODE_ENV=dev npm run dev:all",
+		"dev:all": "concurrently -n=svelte,electron -c='#ff3e00',blue \"npm run dev:svelte\" \"npm run dev:electron\"",
+		"dev:svelte": "vite dev",
+		"dev:electron": "electron src/electron.cjs",
+		"build": "cross-env NODE_ENV=production npm run build:svelte && npm run build:electron",
+		"build:svelte": "vite build",
+		"build:electron": "electron-builder -mwl --config electron-builder.json",
+		"publish": "electron-builder --config electron-builder.json --publish always -mwl",
+		"publishmac": "electron-builder --config electron-builder.json --publish always -m",
+		"release": "electron-builder --config electron-builder.json --publish always",
+		"dist": "electron-builder --config electron-builder.json",
+		"major": "node version/major.js",
+		"minor": "node version/minor.js",
+		"patch": "node version/patch.js"
+	},
+	"engines": {
+		"npm": ">=7",
+		"yarn": "use npm - https://github.com/FractalHQ/sveltekit-electron/issues/12#issuecomment-1068399385"
+	},
+	"dependencies": {
+		"@fontsource/overpass": "^5.0.3",
+		"address": "^1.2.2",
+		"app-builder-lib": "^26.0.12",
+		"electron-context-menu": "^3.6.1",
+		"electron-log": "^4.4.8",
+		"electron-reloader": "^1.2.3",
+		"electron-serve": "^1.1.0",
+		"electron-store": "^8.1.0",
+		"electron-updater": "^6.3.0",
+		"electron-window-state": "^5.0.3",
+		"express": "^4.18.2",
+		"ip": "^1.1.8",
+		"nanoid": "^5.0.9",
+		"osc": "^2.4.4"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-static": "^3.0.3",
+		"@sveltejs/kit": "^2.46.4",
+		"@typescript-eslint/eslint-plugin": "^5.56.0",
+		"@typescript-eslint/parser": "^5.56.0",
+		"carbon-components-svelte": "^0.78.0",
+		"concurrently": "^7.6.0",
+		"cross-env": "^7.0.3",
+		"dotenv": "^16.0.3",
+		"electron": "^35.7.5",
+		"electron-builder": "^26.0.12",
+		"electron-connect": "^0.6.3",
+		"electron-packager": "^17.1.1",
+		"eslint": "^8.36.0",
+		"eslint-config-prettier": "^8.8.0",
+		"npm-run-all": "^4.1.5",
+		"prettier": "^3.0.0",
+		"prettier-plugin-svelte": "^3.0.0",
+		"sass": "^1.60.0",
+		"svelte": "^5.0.0",
+		"svelte-check": "^4.0.0",
+		"tslib": "^2.5.0",
+		"typescript": "^5.7.0",
+		"vite": "^6.3.0"
+	},
+	"overrides": {
+		"electron": {
+			"got": "^12.5.1"
+		}
+	}
+}
