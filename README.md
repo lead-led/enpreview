@@ -1,6 +1,6 @@
 # EM Tally
 
-EM Tally is a desktop companion for Barco Event Master operators. It polls the processor over OSC and HTTP, then surfaces tally and destination state in a configurable Electron + Svelte interface so you always know what is live, on preview, or listening.
+EM Tally is a desktop companion for Barco Event Master operators. It talks to the frame over the JSON-RPC API on port `9999`, feeding tally and destination state into a configurable Electron + Svelte interface so you always know what is live, on preview, or listening.
 
 ---
 
@@ -17,10 +17,16 @@ EM Tally is a desktop companion for Barco Event Master operators. It polls the p
 
 ## Key features
 
-- Real-time polling of Event Master destinations and layer content.
+- JSON-RPC polling of Event Master destinations and layer content.
 - Visual tally indicators for program, preview, and listened destinations.
 - Electron shell with draggable windows for overlay-style monitoring.
 - Carbon Components Svelte UI with themeable widgets.
+
+## Architecture notes
+
+- `src/main/classes/backendService.cjs` boots an Express server (default port `6788`) that receives Event Master subscription callbacks and relays them to renderer windows.
+- `src/main/classes/RequestController.cjs` issues HTTP POST requests to `http://<frame>:9999` for methods such as `listPresets`, `listContent`, and `subscribe`.
+- `response_objects/` captures real Event Master responses for reference when iterating on parsing logic.
 
 ## Getting started
 
@@ -43,7 +49,7 @@ Artifacts are written to `dist/` and `build/` depending on the target platform. 
 ## Troubleshooting
 
 - Response samples in `response_objects/` illustrate the expected payloads from Event Master APIs.
-- If tally data stops updating, confirm the OSC subscriptions (`ScreenDestChanged`, `AuxDestChanged`) are flowing—these trigger refresh calls for `listContent` and `listAuxContent`.
+- If tally data stops updating, confirm the backend Express listener is reachable from the frame and that subscriptions (`ScreenDestChanged`, `AuxDestChanged`) are posting to it—these trigger refresh calls for `listContent` and `listAuxContent`.
 
 ## License
 
