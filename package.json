@@ -1,6 +1,6 @@
 {
 	"name": "enpreview",
-	"version": "1.0.3",
+	"version": "1.0.5",
 	"description": "Show state of barco event master and some other things.",
 	"main": "src/electron.cjs",
 	"type": "module",
@@ -18,6 +18,8 @@
 		"build:svelte": "vite build",
 		"build:electron": "electron-builder -mwl --config electron-builder.json",
 		"publish": "electron-builder --config electron-builder.json --publish always -mwl",
+		"publish:local": "cross-env NODE_ENV=production npm run build:svelte && electron-builder --config electron-builder.json --publish always -ml",
+		"release:i": "node scripts/release.js",
 		"publishmac": "electron-builder --config electron-builder.json --publish always -m",
 		"release": "electron-builder --config electron-builder.json --publish always",
 		"dist": "electron-builder --config electron-builder.json",
@@ -43,7 +45,8 @@
 		"express": "^4.18.2",
 		"ip": "^1.1.8",
 		"nanoid": "^5.0.9",
-		"osc": "^2.4.4"
+		"osc": "^2.4.4",
+		"prompts": "^2.4.2"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "^3.0.3",
