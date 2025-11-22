@@ -2,10 +2,32 @@ const { ipcMain, BrowserWindow, app } = require('electron');
 const windowStateManager = require('electron-window-state');
 const path = require('path');
 const serve = require('electron-serve');
+const http = require('http');
 
 const dev = !app.isPackaged;
-const port = process.env.PORT || 5173;
+// Use a dedicated env var so random global PORT values don't break the dev server lookup.
+const port = Number(process.env.VITE_DEV_SERVER_PORT) || 5173;
 const serveURL = serve({ directory: '.' });
+
+const waitForDevServer = (port, maxAttempts = 50, delay = 200) =>
+	new Promise((resolve, reject) => {
+		const attempt = attemptCount => {
+			const req = http.get({ host: '127.0.0.1', port, path: '/' }, res => {
+				res.resume();
+				resolve();
+			});
+
+			req.on('error', () => {
+				if (attemptCount <= 0) {
+					reject(new Error(`Dev server never became ready on port ${port}`));
+					return;
+				}
+				setTimeout(() => attempt(attemptCount - 1), delay);
+			});
+		};
+
+		attempt(maxAttempts);
+	});
 
 class WindowsManager {
 	all = [];
@@ -87,8 +109,14 @@ class WindowsManager {
 		this.all.push(newWindow);
 
 		if (dev) {
-			this.loadVite(port, newWindow);
-			newWindow.webContents.openDevTools();
+			waitForDevServer(port)
+				.then(() => {
+					this.loadVite(port, newWindow);
+					newWindow.webContents.openDevTools();
+				})
+				.catch((err) => {
+					console.error('Vite dev server never became ready:', err);
+				});
 		} else {
 			serveURL(newWindow);
 		}
@@ -136,10 +164,7 @@ class WindowsManager {
 
 	loadVite(port, window) {
 		window.loadURL(`http://localhost:${port}`).catch((e) => {
-			console.log('Error loading URL, retrying', e);
-			setTimeout(() => {
-				this.loadVite(port, window);
-			}, 200);
+			console.error('Error loading dev server URL', e);
 		});
 	}
 }

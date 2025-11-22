@@ -28,9 +28,6 @@
 		]
 	},
 	"win": {
-		"publish": {
-			"provider": "generic",
-			"url": "localhost"
-		}
+		"target": "nsis"
 	}
 }
