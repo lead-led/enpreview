@@ -2,6 +2,10 @@
 
 Enpreview is a desktop companion for Barco Event Master operators. It talks to the frame over the JSON-RPC API on port `9999`, feeding tally and destination state into a configurable Electron + Svelte interface so you always know what is live, on preview, or listening.
 
+## Download
+
+[**Download the latest version for Mac, Windows, and Linux**](https://github.com/lead-led/enpreview/releases/latest)
+
 ---
 
 **Project links**
