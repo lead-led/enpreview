@@ -28,7 +28,7 @@
 		]
 	},
 	"linux": {
-		"target": ["AppImage", "deb"],
+		"target": ["AppImage", "tar.gz"],
 		"category": "Utility"
 	},
 	"win": {

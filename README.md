@@ -46,6 +46,37 @@ npm run dist           # packages desktop binaries with electron-builder
 
 Artifacts are written to `dist/` and `build/` depending on the target platform. See `electron-builder.json` for platform-specific configuration.
 
+## Release Workflow
+
+This project uses a hybrid release workflow:
+
+- **Windows** builds are handled by GitHub Actions.
+- **Mac & Linux** builds are handled locally on your machine.
+- All artifacts are uploaded to the same GitHub Release.
+
+### Prerequisites
+
+1. Create a **Personal Access Token (Classic)** on GitHub with `repo` scope.
+2. Add it to a `.env` file in the project root:
+    ```bash
+    GH_TOKEN=ghp_your_token_here
+    ```
+
+### Creating a Release
+
+Run the interactive release script:
+
+```bash
+npm run release-interactive
+```
+
+This script will:
+
+1. Prompt you for the version bump (patch, minor, major).
+2. Update `package.json`, commit, and tag the release.
+3. Push the tag to GitHub (triggering the Windows build Action).
+4. Build and upload Mac & Linux artifacts from your local machine.
+
 ## Troubleshooting
 
 - Response samples in `response_objects/` illustrate the expected payloads from Event Master APIs.
