@@ -16,8 +16,7 @@
 	"publish": {
 		"provider": "github",
 		"owner": "lead-led",
-		"repo": "enpreview",
-		"private": true
+		"repo": "enpreview"
 	},
 	"mac": {
 		"target": [
